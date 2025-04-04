@@ -58,6 +58,131 @@ public class AddPartController implements Initializable, Controller {
     @FXML
     private TextField minTxt;
 
+
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
+    public void setScene(Parent scene) {
+        this.scene = scene;
+    }
+
+    public void setOutsourced(boolean outsourced) {
+        isOutsourced = outsourced;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    public void setPartId(int partId) {
+        this.partId = partId;
+    }
+
+    public void setInhouseRBtn(RadioButton inhouseRBtn) {
+        this.inhouseRBtn = inhouseRBtn;
+    }
+
+    public void setOutsourcedRBtn(RadioButton outsourcedRBtn) {
+        this.outsourcedRBtn = outsourcedRBtn;
+    }
+
+    public void setAddPartDynamicLbl(Label addPartDynamicLbl) {
+        this.addPartDynamicLbl = addPartDynamicLbl;
+    }
+
+    public void setPartIdTxt(TextField partIdTxt) {
+        this.partIdTxt = partIdTxt;
+    }
+
+    public void setNameTxt(TextField nameTxt) {
+        this.nameTxt = nameTxt;
+    }
+
+    public void setInventoryTxt(TextField inventoryTxt) {
+        this.inventoryTxt = inventoryTxt;
+    }
+
+    public void setPriceTxt(TextField priceTxt) {
+        this.priceTxt = priceTxt;
+    }
+
+    public void setAddPartDynamicTxt(TextField addPartDynamicTxt) {
+        this.addPartDynamicTxt = addPartDynamicTxt;
+    }
+
+    public void setMaxTxt(TextField maxTxt) {
+        this.maxTxt = maxTxt;
+    }
+
+    public void setMinTxt(TextField minTxt) {
+        this.minTxt = minTxt;
+    }
+
+    public Stage getStage() {
+        return stage;
+    }
+
+    public Parent getScene() {
+        return scene;
+    }
+
+    public boolean isOutsourced() {
+        return isOutsourced;
+    }
+
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public int getPartId() {
+        return partId;
+    }
+
+    public InventoryService getService() {
+        return service;
+    }
+
+    public RadioButton getInhouseRBtn() {
+        return inhouseRBtn;
+    }
+
+    public RadioButton getOutsourcedRBtn() {
+        return outsourcedRBtn;
+    }
+
+    public Label getAddPartDynamicLbl() {
+        return addPartDynamicLbl;
+    }
+
+    public TextField getPartIdTxt() {
+        return partIdTxt;
+    }
+
+    public TextField getNameTxt() {
+        return nameTxt;
+    }
+
+    public TextField getInventoryTxt() {
+        return inventoryTxt;
+    }
+
+    public TextField getPriceTxt() {
+        return priceTxt;
+    }
+
+    public TextField getAddPartDynamicTxt() {
+        return addPartDynamicTxt;
+    }
+
+    public TextField getMaxTxt() {
+        return maxTxt;
+    }
+
+    public TextField getMinTxt() {
+        return minTxt;
+    }
+
     public AddPartController(){}
 
     @Override
@@ -165,7 +290,7 @@ public class AddPartController implements Initializable, Controller {
                 } else {
                     service.addInhousePart(name, Double.parseDouble(price), Integer.parseInt(inStock), Integer.parseInt(min), Integer.parseInt(max), Integer.parseInt(partDynamicValue));
                 }
-                displayScene(event, "/fxml/MainScreen.fxml");
+                //displayScene(event, "/fxml/MainScreen.fxml");
             }
             
         } catch (NumberFormatException e) {
