@@ -56,7 +56,7 @@ public class InventoryTest {
     }
 
     @Test
-    @Order(1)
+    @Order(2)
     void testLookupPart_NonValid() {
 
 
@@ -68,5 +68,17 @@ public class InventoryTest {
 
     }
 
+    @Test
+    @Order(3)
+    void testLookupPart_ValidId() {
+
+
+
+        Part rezultPart = inventory.lookupPart("1");
+
+        assertEquals(rezultPart.getPartId(),1);
+
+
+    }
 
 }

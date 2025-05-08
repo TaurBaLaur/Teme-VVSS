@@ -84,8 +84,6 @@ public class InventoryRepository {
 					listP.add(product);
 			}
 			br.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
