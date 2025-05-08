@@ -190,13 +190,14 @@ class AddPartControllerTest {
             Button mockButton = new Button();
             ActionEvent mockEvent = new ActionEvent(mockButton, mockStage);
 
+            long n = repo.getAllParts().size();
             try {
                 controller.handleAddPartSave(mockEvent);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
 
-            assertTrue(true);
+            assertEquals(repo.getAllParts().size(),n+1);
         });
 
         Thread.sleep(100); // Așteaptă puțin pentru ca JavaFX să proceseze event-ul
