@@ -94,14 +94,31 @@ public class Inventory {
      * @param searchItem
      * @return 
      */
+//    public Part lookupPart(String searchItem) {
+//        for(Part p:allParts) {
+//            if(p.getName().contains(searchItem) || (p.getPartId()+"").equals(searchItem))
+//                return p;
+//        }
+//        return null;
+//    }
+//
+
     public Part lookupPart(String searchItem) {
+
+        Part pFinal = null ;
         for(Part p:allParts) {
-            if(p.getName().contains(searchItem) || (p.getPartId()+"").equals(searchItem))
-                return p;
+            if(p.getName().contains(searchItem))
+                pFinal = p;
+            if((p.getPartId()+"").equals(searchItem))
+                pFinal = p;
+
+            if(pFinal != null)
+                return pFinal;
+
         }
         return null;
     }
-    
+
     /**
      * Update part at given index
      * @param index
